@@ -5,7 +5,7 @@
  * print_all - Prints anything
  * @format: Types of arguments passed to function
  */
-void print_all(const char * const format, ...)
+int _printf(const char *format, ...)
 {
     print_type types[] = {
         {"c", func_char},

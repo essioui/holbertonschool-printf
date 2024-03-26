@@ -19,7 +19,7 @@ typedef struct print
 
 
 int _putchar(char c);
-void print_all(const char * const format, ...);
+int _printf(const char *format, ...);
 int func_char(va_list list);
 int func_string(va_list list);
 int func_percent(va_list list);
