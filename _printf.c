@@ -7,18 +7,44 @@
  */
 int _printf(const char *format, ...)
 {
-    print_type types[] = {
-        {"c", func_char},
-        {"s", func_string},
-        {"f", func_percent},
-        {NULL, NULL}
-    };
-    va_list list;
+    va_list args;
+    va_start(args, format);
+    while (*format != '\0')
+    {
+        switch (*format)
+        {
+            case '%':
+                format++;
 
-
-    int count = 0;
-    va_start(list, format);
-    //code: count = ; 
-    va_end(list);
-    return(count);
+                 switch (*format)
+                {
+                    case 'c':
+                    _putchar(va_arg(args, int) + '0');
+                    break;
+                    case 's':
+                    {
+                        char *str = va_arg(args, char*);
+                        while (*str)
+                        {
+                            _putchar(*str);
+                            str++;
+                        }  
+                    }
+                    break;
+                    case '%':
+                    _putchar(args);
+                    break;
+            
+                default:
+                _putchar(*format);
+                break;
+                }
+            break;
+         default:
+         _putchar(*format);
+            break;
+        }
+        format++;
+    }
+    va_end(args);
 }

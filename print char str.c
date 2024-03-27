@@ -4,13 +4,13 @@
 
 /**
  * print_char - Prints a char
- * @ap: Argument pointer
+ * @args: Argument pointer
  */
-int func_char(va_list list)
+int func_char(va_list args)
 {
 	char c;
 
-	c = (va_arg(list, int));
+	c = (va_arg(args, int));
 	_putchar(c);
 	return (1);
 }
@@ -20,27 +20,25 @@ int func_char(va_list list)
 
 /**
  * print_string - Prints a string
- * @ap: Argument pointer
+ * @args: Argument pointer
  */
-int func_string(va_list list)
+void func_string(va_list args)
 {
 	int i;
 	char *ptr;
 
-	ptr = (va_arg(list, char *));
+	ptr = (va_arg(args, char *));
 	if (ptr == 0)
 		ptr = "(null)";
 	for (i = 0; ptr[i] != 0; i++)
 		_putchar(ptr[i]);
-	return (i);
 }
 
 /**
  * print_percent - Prints an percent
- * @ap: Argument pointer
+ * @args: Argument pointer
  */
-int func_percent(va_list list)
+void func_percent(va_list args)
 {
     putchar('%');
-	return (1);
 }
