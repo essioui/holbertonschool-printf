@@ -20,10 +20,5 @@ typedef struct print
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int func_char(va_list list);
-int func_string(va_list list);
-int func_percent(va_list list);
-
-
 
 #endif
