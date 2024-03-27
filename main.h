@@ -1,10 +1,9 @@
-#ifndef PRINT
-#define PRINT
+#ifndef PRINTF_H
+#define PRINTF_H
 
-#include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * struct print - Struct print
  *
@@ -13,17 +12,11 @@
  */
 typedef struct print
 {
-	char *type;
-	void (*f)(va_list ap);
+        char *type;
+        void (*f)(va_list ap);
 } print_type;
 
-
-int _putchar(char c);
 int _printf(const char *format, ...);
-int func_char(va_list list);
-int func_string(va_list list);
-int func_percent(va_list list);
-
-
+int _putchar(char c);
 
 #endif
