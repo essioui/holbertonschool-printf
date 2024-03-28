@@ -20,6 +20,11 @@ while (*format)
 if (*format == '%')
 {
 format++;
+if (*format == '\0')
+{
+putchar('%');
+break;
+}
 switch (*format)
 {
 case 'c':
