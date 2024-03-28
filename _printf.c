@@ -33,7 +33,7 @@ while (*str)
 {
 _putchar(*str);
 str++;
-i++;
+
 }
 break;
 
@@ -66,6 +66,8 @@ case 'o':
 b = va_arg(args, int);
 print_oct(b);
 break;
+
+case 'p':
 
 
 
