@@ -29,6 +29,17 @@ i++;
 break;
 case 's':
 str = va_arg(args, char *);
+if (str == NULL)
+{
+_putchar('(');
+_putchar('n');
+_putchar('u');
+_putchar('l');
+_putchar('l');
+_putchar(')');
+i += 6;
+}
+else
 while (*str)
 {
 _putchar(*str);
@@ -85,10 +96,10 @@ else
 _putchar(*format);
 i++;
 }
+
 format++;
 }
 
 va_end(args);
-
-return i;
+return (i);
 }
