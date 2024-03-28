@@ -33,7 +33,7 @@ while (*str)
 {
 _putchar(*str);
 str++;
-
+i++;
 }
 break;
 
