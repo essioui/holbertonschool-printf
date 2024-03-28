@@ -22,7 +22,7 @@ if (*format == '%')
 format++;
 if (*format == '\0')
 {
-putchar('%');
+_putchar('%');
 break;
 }
 switch (*format)
