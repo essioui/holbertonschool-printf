@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 va_list args;
 int i = 0;
 int a;
-unsigned int n;
+unsigned int n, b;
 char *str;
 char c;
 
@@ -60,6 +60,11 @@ break;
 case 'X':
 n = va_arg(args, unsigned int);
 print_hex_upper(n);
+break;
+
+case 'o':
+b = va_arg(args, int);
+print_oct(b);
 break;
 
 

@@ -22,6 +22,7 @@ void print_number(int n);
 void print_unsigned(unsigned int n);
 void print_hex_low(unsigned int n);
 void print_hex_upper(unsigned int n);
+void print_oct(unsigned int n);
 
 
 #endif
