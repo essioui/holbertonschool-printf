@@ -87,7 +87,7 @@ break;
 
 
 case '%':
-_putchar('');
+_putchar('%');
 i++;
 break;
 default:
