@@ -18,5 +18,10 @@ typedef struct print
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+void print_number(int n);
+void print_unsigned(unsigned int n);
+void print_hex_low(unsigned int n);
+void print_hex_upper(unsigned int n);
+
 
 #endif

@@ -9,6 +9,8 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int i = 0;
+int a;
+unsigned int n;
 char *str;
 char c;
 
@@ -34,6 +36,34 @@ str++;
 i++;
 }
 break;
+
+case 'd':
+a = va_arg(args, int);
+print_number(a);
+break;
+
+case 'i':
+a = va_arg(args, int);
+print_number(a);
+break;
+
+case 'u':
+n = va_arg(args, unsigned int);
+print_unsigned(n);
+break;
+
+case 'x':
+n = va_arg(args, unsigned int);
+print_hex_low(n);
+break;
+
+case 'X':
+n = va_arg(args, unsigned int);
+print_hex_upper(n);
+break;
+
+
+
 case '%':
 _putchar('%');
 i++;
