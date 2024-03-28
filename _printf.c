@@ -78,6 +78,8 @@ b = va_arg(args, int);
 print_oct(b);
 break;
 
+case 'p':
+
 
 
 case '%':
