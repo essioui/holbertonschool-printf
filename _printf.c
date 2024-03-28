@@ -22,7 +22,8 @@ if (*format == '%')
 format++;
 if (*format == '\0')
 {
-return (-1);
+_putchar('0');
+break;
 }
 switch (*format)
 {
