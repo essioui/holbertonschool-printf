@@ -17,14 +17,26 @@ char c;
 va_start(args, format);
 while (*format)
 {
+if (*format == '%' && *(format + 1) == '%')
+{
+_putchar('%');
+i++;
+break;
+}
+    
+else
+
 if (*format == '%')
 {
 format++;
+
+
 if (*format == '\0')
 {
-_putchar('0');
 break;
 }
+
+
 switch (*format)
 {
 case 'c':
