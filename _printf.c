@@ -107,5 +107,5 @@ format++;
 }
 
 va_end(args);
-return (i);
+return (i - 1);
 }
