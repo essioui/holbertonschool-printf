@@ -25,8 +25,6 @@ if (*format == '\0')
 _putchar('0');
 break;
 }
-if (format[0] == '%' && format[1] == '%')
-_putchar('%');
 switch (*format)
 {
 case 'c':
