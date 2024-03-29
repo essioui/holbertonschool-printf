@@ -15,18 +15,11 @@ char *str;
 char c;
 
 va_start(args, format);
-for (i = 0; *format != 0; i++)
+while (*format)
 {
-
 if (*format == '%')
 {
-    if (*format + 1 == '%')
-    {
-        _putchar('%');
-        i++;
-        format++;
-    }
-    
+format++;
 if (*format == '\0')
 {
 _putchar('0');
