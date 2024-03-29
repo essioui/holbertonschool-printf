@@ -1,7 +1,7 @@
                                      Library Functions Manual                             
 
 NAME
-       _printf - print formatted output to stdout
+       _printf - print formatted output to stdout 
 
 SYNOPSIS
        #include <main.h>
