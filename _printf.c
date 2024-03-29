@@ -20,6 +20,7 @@ while (*format)
 if (*format == '%')
 {
 format++;
+i++;
 if (*format == '\0')
 {
 _putchar('0');
@@ -104,6 +105,7 @@ i++;
 }
 
 format++;
+i++;
 }
 
 va_end(args);
