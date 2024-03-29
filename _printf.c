@@ -56,11 +56,13 @@ break;
 case 'd':
 a = va_arg(args, int);
 print_number(a);
+return (i);
 break;
 
 case 'i':
 a = va_arg(args, int);
 print_number(a);
+return (i);
 break;
 
 case 'u':
@@ -107,5 +109,5 @@ format++;
 }
 
 va_end(args);
-return (i - 1);
+return (i);
 }
