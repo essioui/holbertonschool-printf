@@ -23,6 +23,7 @@ void print_unsigned(unsigned int n);
 void print_hex_low(unsigned int n);
 void print_hex_upper(unsigned int n);
 void print_oct(unsigned int n);
+int _strlen(const char *str);
 
 
 #endif
