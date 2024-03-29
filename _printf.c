@@ -55,12 +55,12 @@ break;
 
 case 'd':
 a = va_arg(args, int);
-return (a);
+print_number(a);
 break;
 
 case 'i':
 a = va_arg(args, int);
-return (a);
+print_number(a);
 break;
 
 case 'u':
