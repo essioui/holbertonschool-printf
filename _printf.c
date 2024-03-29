@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _printf - Produces output according to a format.
@@ -8,35 +7,27 @@
  */
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int i = 0;
-    int a, j;
-    unsigned int n, b;
-    char *str;
-    char c;
-    int len = _strlen(format);
+va_list args;
+int i = 0;
+int a;
+unsigned int n, b;
+char *str;
+char c;
 
-    va_start(args, format);
-    for (j = 0; j < len; j++)
-    {
-        if (format[j] == '%' && j == len - 1)
-        {
-            _putchar('%');
-            i++;
-            break;
-        }
-        else if (format[j] == '%')
-        {
-            if (format[j + 1] == '\0')
-            {
-                _putchar('%');
-                i++;
-                break;
-            }
-
-            switch (format[j + 1])
-            {
-                case 'c':
+va_start(args, format);
+while (*format)
+{
+if (*format == '%')
+{
+format++;
+if (*format == '\0')
+{
+return (i);
+break;
+}
+switch (*format)
+{
+case 'c':
 c = va_arg(args, int);
 _putchar(c);
 i++;
@@ -94,6 +85,7 @@ break;
 
 
 
+
 case '%':
 _putchar('%');
 i++;
@@ -103,17 +95,17 @@ _putchar('%');
 _putchar(*format);
 i += 2;
 break;
-                
-            }
-            j++;
-        }
-        else
-        {
-            _putchar(format[j]);
-            i++;
-        }
-    }
+}
+}
+else
+{
+_putchar(*format);
+i++;
+}
 
-    va_end(args);
-    return i;
+format++;
+}
+
+va_end(args);
+return (i);
 }
