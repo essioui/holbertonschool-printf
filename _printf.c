@@ -19,6 +19,11 @@ while (*format)
 {
 if (*format == '%')
 {
+    if (*format + 1 == '%')
+    {
+        _putchar('%');
+    }
+    
 format++;
 if (*format == '\0')
 {
