@@ -15,8 +15,10 @@ char *str;
 char c;
 
 va_start(args, format);
-for (i = 0; *format != 0; i++)
+for (i = 0; *format != '\0'; i++)
 {
+
+
 
 if (*format == '%')
 {
@@ -111,6 +113,8 @@ i++;
 }
 
 format++;
+
+
 }
 
 va_end(args);
