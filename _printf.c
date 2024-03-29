@@ -9,6 +9,11 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int i = 0;
+int a;
+unsigned int n, b;
+char *str;
+char c;
+
 va_start(args, format);
 while (*format)
 {
@@ -23,31 +28,64 @@ break;
 switch (*format)
 {
 case 'c':
-print_char(va_arg(args, int));
+c = va_arg(args, int);
+_putchar(c);
 i++;
 break;
 case 's':
-print_str(va_arg(args, char *));
+str = va_arg(args, char *);
+if (str == NULL)
+{
+_putchar('(');
+_putchar('n');
+_putchar('u');
+_putchar('l');
+_putchar('l');
+_putchar(')');
+i += 6;
+}
+else
+while (*str)
+{
+_putchar(*str);
+str++;
 i++;
+}
 break;
+
 case 'd':
-print_number(va_arg(args, int));
+a = va_arg(args, int);
+print_number(a);
 break;
+
 case 'i':
-print_number(va_arg(args, int));
+a = va_arg(args, int);
+print_number(a);
 break;
+
 case 'u':
-print_unsigned(va_arg(args, unsigned int));
+n = va_arg(args, unsigned int);
+print_unsigned(n);
 break;
+
 case 'x':
-print_hex_low(va_arg(args, unsigned int));
+n = va_arg(args, unsigned int);
+print_hex_low(n);
 break;
+
 case 'X':
-print_hex_upper(va_arg(args, unsigned int));
+n = va_arg(args, unsigned int);
+print_hex_upper(n);
 break;
+
 case 'o':
-print_oct(va_arg(args, int));
+b = va_arg(args, int);
+print_oct(b);
 break;
+
+
+
+
 case '%':
 _putchar('%');
 i++;
@@ -64,8 +102,10 @@ else
 _putchar(*format);
 i++;
 }
+
 format++;
 }
+
 va_end(args);
 return (i);
 }
